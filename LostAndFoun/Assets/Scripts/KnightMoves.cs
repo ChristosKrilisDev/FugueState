@@ -70,7 +70,7 @@ public class KnightMoves : MonoBehaviour
             float elapsedTime = 0;
             float waitTime = 5f;
 
-            while (elapsedTime < waitTime && Vector3.Magnitude(transform.position - initPos.position) > 0.2f)
+            while (elapsedTime < waitTime && Vector3.Magnitude(transform.position - initPos.position) > 0.6f)
             {
                 transform.position = Vector3.Lerp(transform.position, initPos.position, elapsedTime / waitTime);
                 transform.rotation = Quaternion.Slerp(transform.rotation, initPos.rotation, elapsedTime / waitTime);

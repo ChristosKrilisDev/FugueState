@@ -60,7 +60,7 @@ public class PickNRotate : MonoBehaviour
                 item = whatIHit.transform;
                 itemOriginPos = item.position;
                 itemOriginRot = item.rotation;
-                item.transform.LookAt(this.transform, Vector3.up);
+                item.transform.LookAt(this.transform, -Vector3.up);
                 item.transform.parent = this.transform;
                 item.transform.localPosition = new Vector3(0, 0, 0.7f);
                 pm.enabled = false;

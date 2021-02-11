@@ -90,6 +90,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &3750947515514656657
@@ -104,12 +105,11 @@ GameObject:
   - component: {fileID: 3750947515513523089}
   - component: {fileID: 3750947515512392017}
   - component: {fileID: 356001498097277754}
-  - component: {fileID: 356001498097277755}
   - component: {fileID: 356001498097277700}
   - component: {fileID: 356001498097277701}
   m_Layer: 9
   m_Name: Torch
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,9 +121,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3750947515514656657}
-  m_LocalRotation: {x: -0.7351924, y: -0, z: -0, w: 0.6778586}
+  m_LocalRotation: {x: -0.73519266, y: 0, z: 0, w: 0.6778582}
   m_LocalPosition: {x: -18.151, y: -4.834, z: 6.34}
-  m_LocalScale: {x: 100, y: 100.00006, z: 100.00006}
+  m_LocalScale: {x: 100.000015, y: 100.00006, z: 100.00008}
   m_Children:
   - {fileID: 3750947514854854989}
   - {fileID: 7290896579292236109}
@@ -192,21 +192,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.004829846
-  m_Center: {x: -5.9604643e-10, y: 0.00007790679, z: 0.00100517}
---- !u!65 &356001498097277755
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3750947515514656657}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0009152204, y: 0.0010568058, z: 0.008159409}
-  m_Center: {x: -5.2386895e-10, y: 0, z: 0.00033294444}
+  m_Radius: 0.004322348
+  m_Center: {x: -6.098712e-10, y: 0.00007790682, z: 0.0010051702}
 --- !u!114 &356001498097277700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,13 +206,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c112121fd9893e446943f8c73d509774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatItemAmI: 0
-  hasEvent: 0
-  eDo:
-    m_PersistentCalls:
-      m_Calls: []
-  itemSoundFX: {fileID: 8300000, guid: fb56dfe78e533114bbeaa01c0cc5333f, type: 3}
-  highLight: {fileID: 0}
+  myType: 6
+  MyUse: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  eventsOnInteraction: []
+  sfx: {fileID: 8300000, guid: fb56dfe78e533114bbeaa01c0cc5333f, type: 3}
 --- !u!82 &356001498097277701
 AudioSource:
   m_ObjectHideFlags: 0
@@ -236,20 +223,20 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b1fb5ba535a62424388aee15e83e43a3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 3
+  MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -257,23 +244,32 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.3
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -3.3346713
+      outSlope: -3.3346713
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6
+      value: 0.5
+      inSlope: -0.8336678
+      outSlope: -0.8336678
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.30011982
+      outSlope: -0.30011982
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -282,7 +278,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -412,6 +408,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &356001497638593464

@@ -12,6 +12,11 @@ TagManager:
   - Trap
   - Crosshair
   - Crosshair1
+  - g5
+  - c3
+  - e5
+  - f6
+  - Paint
   layers:
   - Default
   - TransparentFX

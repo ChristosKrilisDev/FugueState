@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
 
     public GameObject torch;
 
-    public List<Item> items = new List<Item>();
+    public List<InteractableClass> items = new List<InteractableClass>();
 
     private void Start()
     {
@@ -23,12 +23,12 @@ public class Inventory : MonoBehaviour
         torch.gameObject.SetActive(true);
     }
 
-    public void AddItem(Item item)
+    public void AddItem(InteractableClass item)
     {
         items.Add(item);
     }
 
-    public void RemoveItem(Item remove)
+    public void RemoveItem(InteractableClass remove)
     {
         items.Remove(remove);
     }

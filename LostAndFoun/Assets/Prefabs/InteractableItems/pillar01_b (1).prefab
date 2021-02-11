@@ -58,7 +58,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -155,8 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a857eab4cceb644bad8581a8679300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
-  itemSoundFX: {fileID: 8300000, guid: 079e72b4915b53e4690d7a4b23e89c95, type: 3}
+  tYPE: 0
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  P_itemEvents: []
 --- !u!1 &2636821684896173662
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +172,7 @@ GameObject:
   - component: {fileID: 2636821684899500638}
   - component: {fileID: 2636821684898369694}
   - component: {fileID: 2636821684905704862}
+  - component: {fileID: 1967656292}
   m_Layer: 0
   m_Name: pillar01_b (1)
   m_TagString: Untagged
@@ -259,6 +263,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1967656292
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2636821684896173662}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.605449, y: 4.0036464, z: 1.6054491}
+  m_Center: {x: 0, y: 1.9956893, z: 0.0000010132793}
 --- !u!1001 &2636821685851557477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -269,6 +286,10 @@ PrefabInstance:
     - target: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
       propertyPath: m_Name
       value: crystal_17_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      propertyPath: m_TagString
+      value: Artifact
       objectReference: {fileID: 0}
     - target: {fileID: 4000011695518034, guid: 465c505844950da499dcf096a6da4409, type: 3}
       propertyPath: m_RootOrder

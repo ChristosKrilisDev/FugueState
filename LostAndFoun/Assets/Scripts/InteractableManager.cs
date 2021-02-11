@@ -9,7 +9,6 @@ public class InteractableManager : MonoBehaviour
     public enum InteractableType
     {
         Door,
-        Door1,
         ShakingPainting,
         AudioPainting
     };

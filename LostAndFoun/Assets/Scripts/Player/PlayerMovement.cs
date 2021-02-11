@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float _speed = 6f;
     [SerializeField] float _gravity = -9.81f;
-
+    [Space]
 
     [SerializeField] private Transform _gCheck;
     [SerializeField] private float _gDistancel;

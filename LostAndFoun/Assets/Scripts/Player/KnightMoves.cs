@@ -22,7 +22,7 @@ public class KnightMoves : MonoBehaviour
 
     private List<string> allowed;
     private bool error = false;
-    public AudioSource audio;
+    public AudioSource _myAudio;
 
     void Start()
     {
@@ -85,8 +85,8 @@ public class KnightMoves : MonoBehaviour
 
     void Initialize()
     {
-        if(error && audio != null)
-            audio.Play();
+        if(error && _myAudio != null)
+            _myAudio.Play();
 
         GameObject.Find(target).GetComponent<Light>().intensity = 0;
         error = false;
@@ -126,11 +126,12 @@ public class KnightMoves : MonoBehaviour
         return null;
     }
 
+    bool flag = false;
     private void OnTriggerEnter(Collider other)
     {
 
-
-
+        if(!flag)
+            return;
         if(other.gameObject.transform.parent.name == "Checkerboard")
         {
             if (other.gameObject.name == "InitPos")
